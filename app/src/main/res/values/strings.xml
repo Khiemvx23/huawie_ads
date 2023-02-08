@@ -66,7 +66,7 @@
 
    <!-- url for app to change-->
     <string name="howtouseurl" translatable="false"></string>
-    <string name="developer_page_more_apps" translatable="false">https://play.google.com/store/apps/developer?id=ccccc</string>
+    <string name="developer_page_more_apps" translatable="false">https://appgallery.huawei.com/app/C102725759</string>
     <string name="close" translatable="false">close</string>
     <string name="shareapplication" translatable="false">shareapplication</string>
 

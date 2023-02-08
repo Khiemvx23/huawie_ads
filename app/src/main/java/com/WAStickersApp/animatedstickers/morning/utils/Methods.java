@@ -50,4 +50,13 @@ public class Methods {
         }
     }
 
+    public static void gotoHwGallery(Context context) {
+        try {
+            context.startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(context.getString(R.string.developer_page_more_apps))));
+        } catch (android.content.ActivityNotFoundException anfe) {
+            context.startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse(context.getString(R.string.developer_page_more_apps))));
+        }
+    }
 }

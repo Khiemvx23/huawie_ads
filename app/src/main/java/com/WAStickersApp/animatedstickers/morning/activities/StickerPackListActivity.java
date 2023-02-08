@@ -9,6 +9,7 @@
 package com.WAStickersApp.animatedstickers.morning.activities;
 
 import static com.WAStickersApp.animatedstickers.morning.utils.Methods.gotoFB;
+import static com.WAStickersApp.animatedstickers.morning.utils.Methods.gotoHwGallery;
 import static com.WAStickersApp.animatedstickers.morning.utils.Methods.gotoinstagram;
 
 import android.app.AlertDialog;
@@ -55,7 +56,7 @@ import java.util.List;
 
 public class StickerPackListActivity extends AddStickerPackActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private String appUrl = "https://play.google.com/store/apps/details?id=";
+    private String appUrl;
 
     private DrawerLayout drawer;
     //////////
@@ -75,6 +76,8 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_sticker_pack_list);
+
+        appUrl = getString(R.string.developer_page_more_apps);
 
         mAdView = findViewById(R.id.adView);
         AdUtils.loadBannerAd(mAdView);
@@ -188,7 +191,7 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
             case R.id.action_share: {
                 Intent _myIntent = new Intent(Intent.ACTION_SEND);
                 _myIntent.setType("text/plain");
-                String ShareBody = getString(R.string.shareapplication) + getResources().getString(R.string.app_name) + "'\nYou'll love it. \n\nhttps://play.google.com/store/apps/details?id=" + getPackageName();
+                String ShareBody = getString(R.string.shareapplication) + getResources().getString(R.string.app_name) + "'\nYou'll love it. \n\n" + appUrl;
                 String ShareSub = "Subject";
                 _myIntent.putExtra(Intent.EXTRA_SUBJECT, ShareSub);
                 _myIntent.putExtra(Intent.EXTRA_TEXT, ShareBody);
@@ -211,21 +214,7 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
                 alert.show();
                 return true;
             }
-            case R.id.action_rateapp_side: {
-                final String appName = getPackageName();//your application package name i.e play store application url
-                try {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("market://details?id="
-                                    + appName)));
-                } catch (android.content.ActivityNotFoundException anfe) {
-                    startActivity(new Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/apps/details?id="
-                                    + appName)));
-                }
-                return true;
 
-            }
             case R.id.privacy_side:
 
                 AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -245,25 +234,13 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
                 break;
 
             case R.id.moreapps_side:
-                Uri w = Uri.parse(getString(R.string.developer_page_more_apps));
-                Intent q = new Intent(Intent.ACTION_VIEW, w);
-                startActivity(q);
-
-                break;
             case R.id.rateapp_side:
-                final String appName = getPackageName();//your application package name i.e play store application url
-                try {
-                    startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse("market://details?id="
-                                    + appName)));
-                } catch (android.content.ActivityNotFoundException anfe) {
-                    startActivity(new Intent(
-                            Intent.ACTION_VIEW,
-                            Uri.parse("http://play.google.com/store/apps/details?id="
-                                    + appName)));
-                }
+            case R.id.about_side:
+            case R.id.action_rateapp_side:
+                gotoHwGallery(this);
 
                 break;
+
             case R.id.exit_side:
                 onBackPressed();
 
@@ -282,17 +259,11 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
             case R.id.share:
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "i am using this amazing Animated whatsapp stickers app contain 1000+ Funny stickers\n " + appUrl + BuildConfig.APPLICATION_ID;
+                String shareBody = "i am using this amazing Animated whatsapp stickers app contain 1000+ Funny stickers\n " + appUrl;
                 String shareSub = "Your subject here";
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                 startActivity(Intent.createChooser(sharingIntent, "Share using"));
-                break;
-            case R.id.about_side:
-                Uri s = Uri.parse(getString(R.string.developer_page_more_apps));
-                Intent v = new Intent(Intent.ACTION_VIEW, s);
-                startActivity(v);
-
                 break;
             default:
                 break;
@@ -365,12 +336,4 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
         intent.setPackage("com.google.android.gm");
         startActivity(Intent.createChooser(intent, "Send mail"));
     }
-
-    public void urlsite() {
-        Uri f = Uri.parse(appUrl + BuildConfig.APPLICATION_ID);
-        Intent b = new Intent(Intent.ACTION_VIEW, f);
-        startActivity(b);
-    }
-
-
 }

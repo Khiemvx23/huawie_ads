@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.WAStickersApp.animatedstickers.morning.R;
 import com.WAStickersApp.animatedstickers.morning.utils.AdUtils;
+import com.WAStickersApp.animatedstickers.morning.utils.Methods;
 import com.huawei.hms.ads.AdListener;
 import com.huawei.hms.ads.nativead.NativeAd;
 import com.huawei.hms.ads.nativead.NativeView;
@@ -49,13 +50,7 @@ public class ExitDialog extends Dialog {
 
             @Override
             public void onClick(View v) {
-                try {
-                    context.startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse(context.getString(R.string.developer_page_more_apps))));
-                } catch (android.content.ActivityNotFoundException anfe) {
-                    context.startActivity(new Intent(Intent.ACTION_VIEW,
-                            Uri.parse(context.getString(R.string.developer_page_more_apps))));
-                }
+                Methods.gotoHwGallery(context);
                 dismiss();
             }
         });
