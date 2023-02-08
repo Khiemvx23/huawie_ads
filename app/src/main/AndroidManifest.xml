@@ -58,6 +58,13 @@
             </intent-filter>
         </service>
 
+        <service
+            android:name=".services.MyHmsMessageService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <provider
             android:name="com.WAStickersApp.animatedstickers.morning.StickerContentProvider"
             android:authorities="${contentProviderAuthority}"

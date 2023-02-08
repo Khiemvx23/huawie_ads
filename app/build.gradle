@@ -132,6 +132,7 @@ dependencies {
     implementation 'com.github.matecode:Snacky:1.1.5'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+    implementation 'com.huawei.hms:push:6.3.0.304'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
     implementation 'com.google.android.material:material:1.0.0'
 
