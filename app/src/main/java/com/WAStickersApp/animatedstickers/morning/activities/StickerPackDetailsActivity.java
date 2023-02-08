@@ -41,16 +41,10 @@ import com.WAStickersApp.animatedstickers.morning.StickerPack;
 import com.WAStickersApp.animatedstickers.morning.StickerPackLoader;
 import com.WAStickersApp.animatedstickers.morning.stickerloader.WhitelistCheck;
 import com.WAStickersApp.animatedstickers.morning.adapters.StickerPreviewAdapter;
-import com.google.android.gms.ads.AdError;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.FullScreenContentCallback;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
+import com.WAStickersApp.animatedstickers.morning.utils.AdUtils;
+import com.huawei.hms.ads.AdListener;
+import com.huawei.hms.ads.InterstitialAd;
+import com.huawei.hms.ads.banner.BannerView;
 
 
 import java.lang.ref.WeakReference;
@@ -86,7 +80,7 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
     private final String tag = "NativeAdActivity".getClass().getSimpleName();
     Context c;
     Window window;
-    private AdView mAdView;
+    private BannerView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,17 +100,8 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
 
         setSupportActionBar(toolbar1);
 
-
-
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
         mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        AdUtils.loadBannerAd(mAdView);
 
         stickerPack = getIntent().getParcelableExtra(EXTRA_STICKER_PACK_DATA);
         TextView packNameTextView = findViewById(R.id.pack_name);
@@ -308,52 +293,39 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
     }
     private InterstitialAd mInterstitialAd;
     public void inter() {
-        AdRequest adRequest = new AdRequest.Builder().build();
-        InterstitialAd.load(this,getString(R.string.ADMOB_mInterstitialAd_ads_UNIT_ID), adRequest, new InterstitialAdLoadCallback() {
+        mInterstitialAd = AdUtils.loadInterstitialAd(this, new AdListener(){
             @Override
-            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-                // The mInterstitialAd reference will be null until
-                // an ad is loaded.
-                mInterstitialAd = interstitialAd;
-                if (mInterstitialAd != null) {
-                    mInterstitialAd.show(StickerPackDetailsActivity.this);
-                } else {
+            public void onAdLoaded() {
+                AdUtils.showInterstitialAd(StickerPackDetailsActivity.this, mInterstitialAd, () -> {
                     saka();
-
-                }
-                mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback(){
-                    @Override
-                    public void onAdDismissedFullScreenContent() {
-                        // Called when fullscreen content is dismissed.
-                        saka();
-                    }
-
-                    @Override
-                    public void onAdFailedToShowFullScreenContent(AdError adError) {
-                        // Called when fullscreen content failed to show.
-                        Log.d("TAG", "The ad failed to show.");
-                    }
-
-                    @Override
-                    public void onAdShowedFullScreenContent() {
-                        // Called when fullscreen content is shown.
-                        // Make sure to set your reference to null so you don't
-                        // show it a second time.
-                        mInterstitialAd = null;
-                        Log.d("TAG", "The ad was shown.");
-                    }
                 });
-
             }
-
             @Override
-            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                // Handle the error
+            public void onAdFailed(int errorCode) {
                 saka();
                 mInterstitialAd = null;
             }
-        });
+            @Override
+            public void onAdClosed() {
 
+            }
+            @Override
+            public void onAdClicked() {
+
+            }
+            @Override
+            public void onAdLeave() {
+
+            }
+            @Override
+            public void onAdOpened() {
+
+            }
+            @Override
+            public void onAdImpression() {
+
+            }
+        });
     }
 
     public void addButton(){

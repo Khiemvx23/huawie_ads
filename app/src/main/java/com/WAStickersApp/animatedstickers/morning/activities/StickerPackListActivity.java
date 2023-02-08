@@ -7,8 +7,10 @@
  */
 
 package com.WAStickersApp.animatedstickers.morning.activities;
+
 import static com.WAStickersApp.animatedstickers.morning.utils.Methods.gotoFB;
 import static com.WAStickersApp.animatedstickers.morning.utils.Methods.gotoinstagram;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -32,18 +34,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.WAStickersApp.animatedstickers.morning.BuildConfig;
-import com.WAStickersApp.animatedstickers.morning.dialogue.ExitDialog;
 import com.WAStickersApp.animatedstickers.morning.R;
 import com.WAStickersApp.animatedstickers.morning.StickerPack;
-import com.WAStickersApp.animatedstickers.morning.stickerloader.WhitelistCheck;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.google.android.material.navigation.NavigationView;
 import com.WAStickersApp.animatedstickers.morning.adapters.StickerPackListAdapter;
+import com.WAStickersApp.animatedstickers.morning.dialogue.ExitDialog;
+import com.WAStickersApp.animatedstickers.morning.stickerloader.WhitelistCheck;
+import com.WAStickersApp.animatedstickers.morning.utils.AdUtils;
 import com.WAStickersApp.animatedstickers.morning.viewholders.StickerPackListItemViewHolder;
+import com.google.android.material.navigation.NavigationView;
+import com.huawei.hms.ads.banner.BannerView;
+
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -53,7 +53,7 @@ import java.util.List;
 ///////// iN THIS Activity i want to ad facebbook native ads
 /////
 
-public class StickerPackListActivity extends AddStickerPackActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class StickerPackListActivity extends AddStickerPackActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private String appUrl = "https://play.google.com/store/apps/details?id=";
 
@@ -68,31 +68,25 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
     private StickerPackListAdapter allStickerPacksListAdapter;
     private WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     private ArrayList<StickerPack> stickerPackList;
-    private AdView mAdView;
+    private BannerView mAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_sticker_pack_list);
 
-        MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });
-
         mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        AdUtils.loadBannerAd(mAdView);
 
         //////////ads
 
 /////////////oncreate///////////////
         drawer = findViewById(R.id.draw);
         Toolbar toolbar;
-        toolbar=findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ActionBar actionBar=getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_baseline_format_align_left_24);
 
@@ -102,10 +96,6 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         navigationView.setNavigationItemSelectedListener(this);
-
-
-
-
 
 
         packRecyclerView = findViewById(R.id.sticker_pack_list);
@@ -118,14 +108,9 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
     }
 
 
-
-
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 drawer.openDrawer(GravityCompat.START);
                 return true;
@@ -134,7 +119,6 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
         }
         return super.onOptionsItemSelected(item);
     }
-
 
 
     @Override
@@ -182,11 +166,13 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
             allStickerPacksListAdapter.setImageRowSpec(maxNumberOfImagesInARow, minMarginBetweenImages);
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbarmain, menu);
         return true;
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -282,7 +268,7 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
                 onBackPressed();
 
                 break;
-            case  R.id.feedback:
+            case R.id.feedback:
 
                 email();
 
@@ -296,7 +282,7 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
             case R.id.share:
                 Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                 sharingIntent.setType("text/plain");
-                String shareBody = "i am using this amazing Animated whatsapp stickers app contain 1000+ Funny stickers\n " +   appUrl + BuildConfig.APPLICATION_ID;
+                String shareBody = "i am using this amazing Animated whatsapp stickers app contain 1000+ Funny stickers\n " + appUrl + BuildConfig.APPLICATION_ID;
                 String shareSub = "Your subject here";
                 sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, shareSub);
                 sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
@@ -358,30 +344,33 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
         Window window = exitDialog.getWindow();
         window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
     }
+
     public void inter() {
 
 
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
     }
+
     public void fbbanner2() {
         //NATIVE
     }
-    public void email(){
-        Intent intent=new Intent(Intent.ACTION_SEND);
+
+    public void email() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/html");
         intent.setPackage("com.google.android.gm");
         startActivity(Intent.createChooser(intent, "Send mail"));
     }
-    public void urlsite(){
-        Uri f = Uri.parse( appUrl + BuildConfig.APPLICATION_ID);
+
+    public void urlsite() {
+        Uri f = Uri.parse(appUrl + BuildConfig.APPLICATION_ID);
         Intent b = new Intent(Intent.ACTION_VIEW, f);
         startActivity(b);
     }
-
-
 
 
 }

@@ -34,6 +34,7 @@ import com.WAStickersApp.animatedstickers.morning.utils.AdUtils;
 import com.huawei.hms.ads.AdListener;
 import com.huawei.hms.ads.nativead.NativeAd;
 import com.huawei.hms.ads.nativead.NativeView;
+import com.huawei.hms.ads.InterstitialAd;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
