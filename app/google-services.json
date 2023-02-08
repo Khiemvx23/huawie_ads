@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "175649501229",
+    "project_id": "babastickers-36500",
+    "storage_bucket": "babastickers-36500.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:175649501229:android:b80a45086b853f437148a4",
+        "android_client_info": {
+          "package_name": "com.WAStickersApp.animatedstickers.morning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "175649501229-hup1pfvici6cih3gbrc1gm8d5lpl2jt2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5QBlTs6Hm-tadVThI1-tg3PtoCvrnx3o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "175649501229-hup1pfvici6cih3gbrc1gm8d5lpl2jt2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

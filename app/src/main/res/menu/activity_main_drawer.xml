@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_facebook"
+            android:icon="@drawable/ic_facebook"
+            android:title="@string/title_facebook" />
+
+        <item
+            android:id="@+id/nav_instagram"
+            android:icon="@drawable/ic_instagram"
+            android:title="@string/title_instagram" />
+        <item
+            android:id="@+id/feedback"
+            android:icon="@drawable/ic_feedback"
+            android:title="Feedback" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <group android:checkableBehavior="single"/>
+        <item
+            android:id="@+id/rateapp_side"
+            android:icon="@drawable/ic_rate"
+            android:title="Rate app" />
+        <item
+            android:id="@+id/moreapps_side"
+            android:icon="@drawable/ic_baseline_subject_24"
+            android:title="More Apps" />
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/ic_share"
+            android:title="SHARE app" />
+        <item
+            android:id="@+id/about_side"
+            android:icon="@drawable/ic_about"
+            android:title="ABOUT US"
+            android:visible="false"/>
+        <item
+                android:id="@+id/privacy_side"
+                android:icon="@drawable/ic_privacy"
+                android:title="Privacy Policy"
+                android:visible="true"/>
+        <item
+            android:id="@+id/exit_side"
+            android:icon="@drawable/ic_exit"
+            android:title="Exit" />
+
+        <item
+                android:id="@+id/howtouse"
+                android:icon="@drawable/ic_menu_slideshow"
+                android:title="Video Guide"
+                android:visible="false"/>
+
+       <item
+                android:id="@+id/Request"
+                android:icon="@drawable/ic_more"
+                android:title="Request More stickers"
+                android:visible="false"/>
+
+        </menu>
+    </item>
+
+</menu>

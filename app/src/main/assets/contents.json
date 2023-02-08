@@ -1,0 +1,811 @@
+{
+  "android_play_store_link": "https://play.google.com/store/apps/details?id=com.babastickers.animatedstickers",
+  "ios_app_store_link": "",
+  "sticker_packs": [
+    {
+      "identifier": "1",
+      "name": "Babies Stickers Pack 1",
+      "publisher": "Ready to use in WhatsApp",
+      "tray_image_file": "icon.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "username": "WAStickerApps",
+      "date": "1-01-2022",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "animated_sticker_pack": true,
+      "stickers": [
+        {
+          "image_file": "1.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "2.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "3.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "4.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "5.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "6.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "7.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "8.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "9.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "10.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "11.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "12.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "13.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "14.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "15.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "16.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "17.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "18.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "19.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "20.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "21.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "22.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "23.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "24.webp",
+          "emojis": [
+            "😂"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "2",
+      "name": "Babies Stickers Pack 2",
+      "publisher": "Ready to use in WhatsApp",
+      "tray_image_file": "icon.webp",
+      "image_data_version": "1",
+      "username": "WAStickerApps",
+      "date": "1-01-2022",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "animated_sticker_pack": true,
+      "stickers": [
+        {
+          "image_file": "1.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "2.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "3.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "4.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "5.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "6.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "7.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "8.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "9.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "10.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "11.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "12.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "13.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "14.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "15.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "16.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "17.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "18.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "19.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "20.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "21.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "22.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "23.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "24.webp",
+          "emojis": [
+            "😂"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "3",
+      "name": "Babies Stickers Pack 3",
+      "publisher": "Ready to use in WhatsApp",
+      "tray_image_file": "icon.webp",
+      "image_data_version": "1",
+      "username": "WAStickerApps",
+      "date": "1-01-2022",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "animated_sticker_pack": true,
+      "stickers": [
+        {
+          "image_file": "1.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "2.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "3.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "4.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "5.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "6.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "7.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "19.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "9.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "10.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "11.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "12.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "13.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "14.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "15.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "16.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "17.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "18.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "20.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "8.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "21.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "22.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "23.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "24.webp",
+          "emojis": [
+            "😂"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "4",
+      "name": "Babies Stickers Pack 4",
+      "publisher": "Ready to use in WhatsApp",
+      "tray_image_file": "icon.webp",
+      "image_data_version": "1",
+      "username": "WAStickerApps",
+      "date": "1-01-2022",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "animated_sticker_pack": true,
+      "stickers": [
+        {
+          "image_file": "1.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "2.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "3.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "4.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "5.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "6.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "7.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "8.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "9.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "10.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "11.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "12.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "13.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "14.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "15.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "16.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "17.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "18.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "19.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "20.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "21.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "22.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "23.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "24.webp",
+          "emojis": [
+            "😂"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "5",
+      "name": "Babies Stickers Pack 5",
+      "publisher": "Ready to use in WhatsApp",
+      "tray_image_file": "icon.webp",
+      "image_data_version": "1",
+      "username": "WAStickerApps",
+      "date": "1-01-2022",
+      "avoid_cache": false,
+      "publisher_email": "",
+      "publisher_website": "",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "animated_sticker_pack": true,
+      "stickers": [
+        {
+          "image_file": "1.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "2.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "3.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "4.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "5.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "6.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "7.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "8.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "9.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "10.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "11.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "12.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "13.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "14.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "15.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "16.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "17.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "18.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "19.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "20.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "21.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "22.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "23.webp",
+          "emojis": [
+            "😂"
+          ]
+        },
+        {
+          "image_file": "24.webp",
+          "emojis": [
+            "😂"
+          ]
+        }
+      ]
+    }
+  ]
+}

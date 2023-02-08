@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:theme="@style/AppTheme">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:elevation="122dp"
+        android:id="@+id/content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/logo"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            android:background="#fff"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/gif" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:text="@string/entry_title"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#673AB7"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:id="@+id/name"
+            android:layout_alignParentBottom="@+id/logo"
+            android:gravity="center"
+            android:paddingTop="50dp"
+            android:layout_marginTop="6dp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:text="@string/entry_msg"
+            android:textSize="20sp"
+            android:textColor="#673AB7"/>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/name"/>
+
+
+
+
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/btnDownload"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="70dp"
+                android:paddingVertical="15dp"
+                android:visibility="gone"
+                android:layout_marginEnd="-24dp"
+                android:layout_marginBottom="20.0dip"
+                android:background="@drawable/yes_button"
+                android:text="@string/entry_start"
+                android:textColor="#FFF"
+                android:textSize="21dp"
+                android:layout_marginRight="-24dp" />
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="150dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/fl_adplaceholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
+
