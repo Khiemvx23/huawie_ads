@@ -11,6 +11,7 @@ package com.WAStickersApp.animatedstickers.morning.application;
 import android.app.Application;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.huawei.hms.ads.HwAds;
 import com.onesignal.OneSignal;
 
 public class StickerApplication extends Application {
@@ -25,5 +26,8 @@ public class StickerApplication extends Application {
         // OneSignal Initialization
         OneSignal.initWithContext(this);
         OneSignal.setAppId(ONESIGNAL_APP_ID);
+
+        // Initialize the Petal Ads SDK.
+        HwAds.init(this);
     }
 }

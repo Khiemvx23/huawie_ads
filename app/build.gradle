@@ -138,5 +138,7 @@ dependencies {
     implementation 'androidx.work:work-runtime:2.7.1'
 
 
+    implementation 'com.huawei.hms:ads-prime:3.4.61.300'
+    implementation 'com.huawei.hms:ads-omsdk:1.3.35'
 
 }

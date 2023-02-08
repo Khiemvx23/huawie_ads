@@ -21,3 +21,6 @@
 #-renamesourcefileattribute SourceFile
 -keep public class com.WAStickersApp.animatedstickers.morning.activities.StickerPackDetailsActivity { *; }
 -keepattributes LineNumberTable,SourceFile
+
+-keep class com.huawei.openalliance.ad.** { *; }
+-keep class com.huawei.hms.ads.** { *; }
