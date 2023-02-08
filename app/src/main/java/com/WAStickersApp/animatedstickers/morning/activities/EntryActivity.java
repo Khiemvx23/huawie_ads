@@ -19,12 +19,9 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -33,16 +30,10 @@ import com.WAStickersApp.animatedstickers.morning.R;
 import com.WAStickersApp.animatedstickers.morning.StickerPack;
 import com.WAStickersApp.animatedstickers.morning.StickerPackLoader;
 import com.WAStickersApp.animatedstickers.morning.StickerPackValidator;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdLoader;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.LoadAdError;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.interstitial.InterstitialAd;
-import com.google.android.gms.ads.nativead.MediaView;
-import com.google.android.gms.ads.nativead.NativeAd;
-import com.google.android.gms.ads.nativead.NativeAdOptions;
-import com.google.android.gms.ads.nativead.NativeAdView;
+import com.WAStickersApp.animatedstickers.morning.utils.AdUtils;
+import com.huawei.hms.ads.AdListener;
+import com.huawei.hms.ads.nativead.NativeAd;
+import com.huawei.hms.ads.nativead.NativeView;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -56,19 +47,14 @@ public class EntryActivity extends BaseActivity {
     private ProgressBar pg;
 
 
-
     private View progressBar;
     private LoadListAsyncTask loadListAsyncTask;
-    private InterstitialAd mInterstitialAd;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
-
-
-
-
 
 
         btn1 = (Button) findViewById(R.id.btnDownload);
@@ -83,7 +69,6 @@ public class EntryActivity extends BaseActivity {
         loadListAsyncTask = new LoadListAsyncTask(this);
         loadListAsyncTask.execute();
     }
-
 
 
     @Override
@@ -127,7 +112,6 @@ public class EntryActivity extends BaseActivity {
         }
 
 
-
         @Override
         protected void onPostExecute(Pair<String, ArrayList<StickerPack>> stringListPair) {
 
@@ -147,116 +131,34 @@ public class EntryActivity extends BaseActivity {
                     );
 
 
-
-
                 }
             }
         }
-        private void populateNativeAdView(NativeAd nativeAd, NativeAdView adView) {
 
-            adView.setMediaView((MediaView) adView.findViewById(R.id.ad_media));
-                adView.setHeadlineView(adView.findViewById(R.id.ad_headline));
-                adView.setBodyView(adView.findViewById(R.id.ad_body));
-                adView.setCallToActionView(adView.findViewById(R.id.ad_call_to_action));
-                adView.setIconView(adView.findViewById(R.id.ad_app_icon));
-                adView.setPriceView(adView.findViewById(R.id.ad_price));
-                adView.setAdvertiserView(adView.findViewById(R.id.ad_advertiser));
-                adView.setStoreView(adView.findViewById(R.id.ad_store));
-                adView.setStarRatingView(adView.findViewById(R.id.ad_stars));
+        private void refreshAd() {
+            final Context context = contextWeakReference.get();
+            FrameLayout frameLayout = findViewById(R.id.fl_adplaceholder);
 
-                ((TextView)adView.getHeadlineView()).setText(nativeAd.getHeadline());
-                adView.getMediaView().setMediaContent(nativeAd.getMediaContent());
+            NativeView adView = (NativeView) getLayoutInflater().inflate(R.layout.ad_unified_hw, null);
 
-                if (nativeAd.getBody() == null) {
-                    adView.getBodyView().setVisibility(View.INVISIBLE);
-                } else {
-                    adView.getBodyView().setVisibility(View.VISIBLE);
-                    ((TextView) adView.getBodyView()).setText(nativeAd.getBody());
+            frameLayout.removeAllViews();
+            frameLayout.addView(adView);
+
+            AdUtils.loadNativeAd(context, adView, ad -> {
+                AdUtils.destroyNativeAd(nativeAd);
+                nativeAd = ad;
+
+                saka.setVisibility(View.GONE);
+                btn.setVisibility(View.VISIBLE);
+            }, new AdListener() {
+                @Override
+                public void onAdFailed(int i) {
+                    btn.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.GONE);
                 }
-                if (nativeAd.getCallToAction() == null) {
-                    adView.getCallToActionView().setVisibility(View.INVISIBLE);
-                } else {
-                    adView.getCallToActionView().setVisibility(View.VISIBLE);
-                    ((Button) adView.getCallToActionView()).setText(nativeAd.getCallToAction());
-                }
-                if (nativeAd.getIcon() == null) {
-                    adView.getIconView().setVisibility(View.GONE);
-                } else {
-                    ((ImageView) adView.getIconView()).setImageDrawable(nativeAd.getIcon().getDrawable());
-                    adView.getIconView().setVisibility(View.VISIBLE);
-                }
-                if (nativeAd.getPrice() == null) {
-                    adView.getPriceView().setVisibility(View.INVISIBLE);
-                } else {
-                    adView.getPriceView().setVisibility(View.VISIBLE);
-                    ((TextView) adView.getPriceView()).setText(nativeAd.getPrice());
-                }
-                if (nativeAd.getStore() == null) {
-                    adView.getStoreView().setVisibility(View.INVISIBLE);
-                } else {
-                    adView.getStoreView().setVisibility(View.VISIBLE);
-                    ((TextView) adView.getStoreView()).setText(nativeAd.getStore());
-
-                }
-                if (nativeAd.getStarRating() == null) {
-                    adView.getStarRatingView().setVisibility(View.INVISIBLE);
-                } else {
-                    ((RatingBar) adView.getStarRatingView()).setRating(nativeAd.getStarRating().floatValue());
-                    adView.getStarRatingView().setVisibility(View.VISIBLE);
-                }
-                if (nativeAd.getAdvertiser() == null) {
-                    adView.getAdvertiserView().setVisibility(View.INVISIBLE);
-
-                } else {
-                    ((TextView) adView.getAdvertiserView()).setText(nativeAd.getAdvertiser());
-                    adView.getAdvertiserView().setVisibility(View.VISIBLE);
-                }
-                adView.setNativeAd(nativeAd);
-            }
-
-            private void refreshAd() {
-                MobileAds.initialize(EntryActivity.this, initializationStatus -> {
-
-                    AdLoader.Builder builder = new AdLoader.Builder(EntryActivity.this, getString(R.string.ADMOB_Native_ads_UNIT_ID));
-                    builder.forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
-                        @Override
-                        public void onNativeAdLoaded(NativeAd NativeAd) {
-                            if (nativeAd != null) {
-                                nativeAd.destroy();
-                            }
-                            saka.setVisibility(View.GONE);
-                            btn.setVisibility(View.VISIBLE);
-                            nativeAd = NativeAd;
-                            FrameLayout frameLayout = findViewById(R.id.fl_adplaceholder);
-
-                            NativeAdView adView = (NativeAdView) getLayoutInflater().inflate(R.layout.ad_unified, null);
-
-                            populateNativeAdView(NativeAd, adView);
-                            frameLayout.removeAllViews();
-                            frameLayout.addView(adView);
-
-                        }
-                    });
-
-                    NativeAdOptions adOptions = new NativeAdOptions.Builder().build();
-                    builder.withNativeAdOptions(adOptions);
-                    AdLoader adLoader = builder.withAdListener (new AdListener(){
-
-                        @Override
-                        public void onAdFailedToLoad(LoadAdError adError) {
-                            btn.setVisibility(View.VISIBLE);
-                            progressBar.setVisibility(View.GONE);
-                        }
-                    }).build();
-                    adLoader.loadAd(new AdRequest.Builder().build());
-
-                });
-            }
+            });
         }
-
-
-
-
+    }
 
 
     private void showErrorMessage(String errorMessage) {
@@ -265,6 +167,7 @@ public class EntryActivity extends BaseActivity {
         final TextView errorMessageTV = findViewById(R.id.error_message);
         errorMessageTV.setText(getString(R.string.error_message, errorMessage));
     }
+
     private void showStickerPack(ArrayList<StickerPack> stickerPackList) {
         progressBar.setVisibility(View.GONE);
         if (stickerPackList.size() > 1) {
@@ -282,9 +185,6 @@ public class EntryActivity extends BaseActivity {
             overridePendingTransition(0, 0);
         }
     }
-
-
-
 
 
 }
